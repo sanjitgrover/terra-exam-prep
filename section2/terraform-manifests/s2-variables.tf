@@ -23,3 +23,7 @@ locals {
         class = local.class
     }
 }
+
+locals{
+    time = formatdate("EEE, DD MMM YYYY hh:mm:ss ZZZ", timestamp())
+}

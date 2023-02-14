@@ -5,3 +5,7 @@ output "my-eip"{
 # output "my-bucker-domain"{
 #     value = aws_s3_bucket.my-bucket.bucket_domain_name
 # }
+
+output "current_time"{
+    value = local.time
+}

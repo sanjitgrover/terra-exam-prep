@@ -1,9 +1,11 @@
 resource "aws_instance" "my-ec2"{
   ami = "ami-0aa7d40eeae50c9a9"
-  instance_type = var.instance-type["us-east-1"]
+  # instance_type = var.instance-type["us-east-1"]
+  instance_type = lookup(var.instance-type, "us-east-2")
   count = var.full_setup == true ? 2 : 1
   tags = {
-    name = "${var.machine[count.index]}-machine"
+    # name = "${var.machine[count.index]}-machine"
+    Name = element(var.machine, count.index)
   }
   
 }
